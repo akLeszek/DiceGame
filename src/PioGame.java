@@ -1,28 +1,12 @@
+import players.PlayerCom;
+
 public class PioGame {
     public static void main(String[] args){
 
-        Statistics stats = new Statistics();
+        Game game = new Game();
 
-//        stats.updateScore("Janusz");
-//        stats.updateScore("Janusz");
-//        stats.clear();
-//        stats.updateScore("Milena");
-//        stats.print();
-//
-
-
-
-        Game game = new Game(new Statistics());
-
-        game.addPlayer(new PlayerCom("Agata"));
-        game.addPlayer(new PlayerCom("Agata"));
-        game.addPlayer(new PlayerCom("Agata"));
-        game.addPlayer(new PlayerCom("Agata"));
-        game.addPlayer(new PlayerCom("Agata"));
-        game.addPlayer(new PlayerCom("Agata"));
-        game.addPlayer(new PlayerCom("Agata"));
-        game.addPlayer(new PlayerCom("Agata"));
-
+        game.addPlayer(new PlayerCom("Janusz"));
+        game.addPlayer(new PlayerCom("Mariola"));
 
         game.showPlayers();
 
@@ -32,11 +16,5 @@ public class PioGame {
 
         game.printStats();
 
-//
-//        try{
-//            game.play();
-//        } catch (IllegalStateException ex){
-//            System.err.println("Błąd: " + ex.getMessage());
-//        }
     }
 }

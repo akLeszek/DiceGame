@@ -1,3 +1,7 @@
+import players.Player;
+import statistics.NullStatistics;
+import statistics.Statistics;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
@@ -11,8 +15,16 @@ public class Game {
 
     private final Statistics stats;
 
+    public Game(){
+        this(null);
+    }
+
     public Game(Statistics stats){
-        this.stats = stats;
+        if(stats != null) {
+            this.stats = stats;
+        } else {
+            this.stats = new NullStatistics();
+        }
     }
 
     public void addPlayer(Player player) {
@@ -74,6 +86,7 @@ public class Game {
 
                 dice = rand.nextInt(6)+1;
                 System.out.println("Kostka: " + dice);
+                System.out.println("---------------------");
 
                 for (Player player : players) {
                     guess = player.guess();
@@ -86,10 +99,10 @@ public class Game {
                         stats.updateScore(player.getName());
                         System.out.println("Fajniutko Wygranko");
                     }
-                    System.out.println("---------------------");
                 }
 
             }while(attempt);
         }
+        stats.clear();
     }
 }

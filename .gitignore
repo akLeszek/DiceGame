@@ -1,1 +1,5 @@
+out/
 .idea/
+*.ini
+*.iml
+
