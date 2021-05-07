@@ -1,6 +1,5 @@
-import players.Player;
-import statistics.NullStatistics;
-import statistics.Statistics;
+import players.*;
+import statistics.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -67,7 +66,6 @@ public class Game {
     }
 
     public void printStats(){
-        System.out.println("################");
         stats.print();
     }
 
@@ -95,14 +93,13 @@ public class Game {
                     if (dice!=guess) {
                         System.out.println("Próbuj Dalej");
                     }else {
+                        System.out.println("Fajniutko Wygranko");
                         attempt = false;
                         stats.updateScore(player.getName());
-                        System.out.println("Fajniutko Wygranko");
                     }
                 }
 
             }while(attempt);
         }
-        stats.clear();
     }
 }
